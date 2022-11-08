@@ -1,1 +1,7 @@
-// Put your project-specific buildscript code in this file
+jar {
+    manifest {
+        attributes (
+			'FMLCorePlugin': 'api.player.forge.PlayerAPIPlugin',
+        )
+    }
+}
