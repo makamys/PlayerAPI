@@ -1,0 +1,17 @@
+== Player API core 1.4 ==
++ added license information
+
+== Player API core 1.3 ==
++ added server hook "isSneaking"
+
+== Player API core 1.2 ==
++ fixed unregistering base classes
+
+== Player API core 1.1 ==
++ added client and server hook "wakeUpPlayer"
++ added client hook "getBedOrientationInDegrees"
++ added server hooks "mountEntity" and "updateRidden"
++ improved code robustness
+
+== Player API core 1.0 ==
++ created Player API core for Minecraft 1.7.10
