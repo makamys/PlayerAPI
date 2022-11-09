@@ -5,3 +5,18 @@ jar {
         )
     }
 }
+
+task devJar(type: Jar) {
+	manifest {
+        attributes (
+			'FMLCorePlugin': 'api.player.forge.PlayerAPIPlugin',
+        )
+    }
+	
+	classifier = 'dev'
+	from sourceSets.main.output
+}
+
+artifacts {
+	archives devJar
+}
