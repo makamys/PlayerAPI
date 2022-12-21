@@ -24,6 +24,7 @@ import cpw.mods.fml.relauncher.*;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.TransformerExclusions("api.player.forge")
+@IFMLLoadingPlugin.SortingIndex(1000)
 public class PlayerAPIPlugin implements IFMLLoadingPlugin
 {
 	public static String Version = "1.4";
@@ -32,7 +33,7 @@ public class PlayerAPIPlugin implements IFMLLoadingPlugin
 
 	public String[] getASMTransformerClass()
 	{
-		return new String[] { "api.player.forge.PlayerAPITransformer" };
+		return new String[] { "api.player.launch.PlayerAPILaunchTransformer" };
 	}
 
 	public String getModContainerClass()
