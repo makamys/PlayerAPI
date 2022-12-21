@@ -33,12 +33,12 @@ public final class ServerPlayerConstructorVisitor extends MethodVisitor
 	public void visitMethodInsn(int opcode, String owner, String name, String desc)
 	{
 		super.visitMethodInsn(opcode, owner, name, desc);
-		if(name.equals("<init>") && owner.equals(isObfuscated ? "yz" : "net/minecraft/entity/player/EntityPlayer"))
+		if(name.equals("<init>") && owner.equals(isObfuscated ? "net/minecraft/entity/player/EntityPlayer" : "net/minecraft/entity/player/EntityPlayer"))
 		{
 			mv.visitVarInsn(Opcodes.ALOAD, 0);
 			mv.visitVarInsn(Opcodes.ALOAD, 0);
 			mv.visitMethodInsn(Opcodes.INVOKESTATIC, "api/player/server/ServerPlayerAPI", "create", "(Lapi/player/server/IServerPlayerAPI;)Lapi/player/server/ServerPlayerAPI;");
-			mv.visitFieldInsn(Opcodes.PUTFIELD, isObfuscated ? "mw" : "net/minecraft/entity/player/EntityPlayerMP", "serverPlayerAPI", "Lapi/player/server/ServerPlayerAPI;");
+			mv.visitFieldInsn(Opcodes.PUTFIELD, isObfuscated ? "net/minecraft/entity/player/EntityPlayerMP" : "net/minecraft/entity/player/EntityPlayerMP", "serverPlayerAPI", "Lapi/player/server/ServerPlayerAPI;");
 
 			mv.visitVarInsn(Opcodes.ALOAD, 0);
 			mv.visitIntInsn(Opcodes.ALOAD, 1);
