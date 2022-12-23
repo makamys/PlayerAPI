@@ -17,12 +17,12 @@ public class LaunchHook {
     {   
         if(!hasInitialized)
         {
-            Launch.classLoader.registerTransformer("api.player.forge.PlayerAPITransformer");
+            Launch.classLoader.registerTransformer("api.player.forge.PlayerAPIFinalTransformer");
             
             try
             {
                 // We don't want to be involved with Mixin, we want to run strictly *after* it.
-                Class.forName("org.spongepowered.asm.mixin.MixinEnvironment").getMethod("addTransformerExclusion", String.class).invoke(null, "api.player.forge.PlayerAPITransformer");
+                Class.forName("org.spongepowered.asm.mixin.MixinEnvironment").getMethod("addTransformerExclusion", String.class).invoke(null, "api.player.forge.PlayerAPIFinalTransformer");
             } catch(Exception e) {}
             
             hasInitialized = true;

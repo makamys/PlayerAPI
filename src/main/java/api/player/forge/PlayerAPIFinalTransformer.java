@@ -23,7 +23,7 @@ import net.minecraft.launchwrapper.*;
 import api.player.client.*;
 import api.player.server.*;
 
-public class PlayerAPITransformer implements IClassTransformer
+public class PlayerAPIFinalTransformer implements IClassTransformer
 {
 	public byte[] transform(String name, String transformedName, byte[] bytes)
 	{
